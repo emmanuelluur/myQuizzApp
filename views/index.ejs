@@ -8,13 +8,14 @@
                     <div class="form-group">
                         <span><strong><%= el.question%><strong></span>
                     </div>
-                    <button type= 'button' class = 'btn btn-primary' quizid="<%= el.id%>" name = "play"> Adivinar </button>
-                    <button type= 'button' class = 'btn btn-info' quizid="<%= el.id%>" name = "edit"> Editar </button>
-                    <button type= 'button' class = 'btn btn-danger' quizid="<%= el.id%>" name = "delete"> Eliminar </button>
+                    <button type= 'button' class = 'btn btn-outline-primary' quizid="<%= el.id%>" name = "play"> Adivinar </button>
+                    <button type= 'button' class = 'btn btn-outline-info' quizid="<%= el.id%>" name = "edit"> Editar </button>
+                    <button type= 'button' class = 'btn btn-outline-danger' quizid="<%= el.id%>" name = "delete"> Eliminar </button>
                 </form>
+                <hr>
             <% }); %>
             <hr>
-            <p><button type= 'button' class = 'btn btn-danger' name = "new"> Nueva Pregunta </button></p>
+            <p><button type= 'button' class = 'btn btn-outline-success' name = "new"> Nueva Pregunta </button></p>
             
         </div>
     </div>

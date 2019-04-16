@@ -1,4 +1,4 @@
-const model = require('../model/config');
+const model = require('../model/quizModel');
 const Op = model.Operators;
 const quizz = model.Quiz;
 
