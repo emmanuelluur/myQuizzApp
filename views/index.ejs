@@ -1,0 +1,23 @@
+<%- include('./templates/header'); -%>
+<div class="container-fluid">
+    <div class="col-sm-6">
+        <h1><%= message%></h1>
+        <div id = "myApp">
+            <% quiz.forEach(function(el,cc) { %>
+                <form class = "form">
+                    <div class="form-group">
+                        <span><strong><%= el.question%><strong></span>
+                    </div>
+                    <button type= 'button' class = 'btn btn-primary' quizid="<%= el.id%>" name = "play"> Adivinar </button>
+                    <button type= 'button' class = 'btn btn-info' quizid="<%= el.id%>" name = "edit"> Editar </button>
+                    <button type= 'button' class = 'btn btn-danger' quizid="<%= el.id%>" name = "delete"> Eliminar </button>
+                </form>
+            <% }); %>
+            <hr>
+            <p><button type= 'button' class = 'btn btn-danger' name = "new"> Nueva Pregunta </button></p>
+            
+        </div>
+    </div>
+</div>
+<%- include('./templates/scripts'); -%>
+<%- include('./templates/end'); -%>

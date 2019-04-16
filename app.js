@@ -2,7 +2,7 @@ let express = require('express');
 let path = require('path');
 let bodyParser = require('body-parser');
 let rutas = require('./router/rutas.js');
-let db = require('./config');
+let db = require('./model/config');
 let app = express();
 
 // uso de templates y acceso a su carpeta views
