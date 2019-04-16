@@ -1,6 +1,6 @@
 <%- include('./templates/header'); -%>
 <div class="container-fluid">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <h1><%= message%></h1>
         <div id = "myApp">
             <% quiz.forEach(function(el,cc) { %>
@@ -15,10 +15,11 @@
                 <hr>
             <% }); %>
             <hr>
-            <p><button type= 'button' class = 'btn btn-outline-success' name = "new"> Nueva Pregunta </button></p>
+            <p><button type= 'button' class = 'btn btn-outline-success btn-block btn-bg' name = "new"> Nueva Pregunta </button></p>
             
         </div>
     </div>
 </div>
 <%- include('./templates/scripts'); -%>
+<script src = "./public/js/bubbling.js"> </script>
 <%- include('./templates/end'); -%>

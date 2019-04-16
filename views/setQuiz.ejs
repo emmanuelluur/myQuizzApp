@@ -1,0 +1,22 @@
+<%- include('./templates/header'); -%>
+<div class="container-fluid">
+    <div class="col-sm-4">
+        <h1><%= message%></h1>
+        <div id = "myApp">
+            <form id = 'frm'>
+                <div class = "form-group">
+                    <input type="text" class = "form-control" name="question" id = "question" value="<%=question%>" placeholder = "Escribe Pregunta" autofocus>
+                </div>
+                <div class = "form-group">
+                    <input type="text" class = "form-control"  name="answer" id = "answer" placeholder = "Escribe Respuesta" value="<%=answer%>">
+                </div>
+                <button type= 'button' class = 'btn btn-outline-success btn-block btn-bg' name = "<%=event%>" > Guardar </button>
+            </form>
+            <hr>
+            <p><button type= 'button' class = 'btn btn-outline-secondary btn-block btn-bg' name = "back"> Regresar </button></p>
+        </div>
+    </div>
+</div>
+<%- include('./templates/scripts'); -%>
+<script src = "../../public/js/bubbling.js"> </script>
+<%- include('./templates/end'); -%>
