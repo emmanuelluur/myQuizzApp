@@ -39,5 +39,5 @@ app.use(function(req, res, next) {
 });
 // run server
 app.listen(80, ()=> {
-    console.log(`Server run on port 3000\n  => \nCode by Emmanuel Lucio Urbina`);
+    console.log(`Server run on port 80\n  => \nCode by Emmanuel Lucio Urbina`);
 })
