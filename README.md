@@ -6,4 +6,4 @@
 - ORM Sequelize
 - express-formidable para manejo de objetos FormData()
 
-### Emmanuel Lucio Urbina
+### Hecho con ❤ por: Emmanuel Lucio Urbina
