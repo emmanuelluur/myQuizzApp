@@ -3,10 +3,10 @@
     <div class="col-sm-4">
         <h1><%= question%></h1>
         <div id = "myApp" method = "post">
-            <form id = 'saveQuiz' name = "saveQuiz" action = "/save/quiz" method = "post">
+            <form id = 'check' name = "check">
                 <input type="hidden"  name="quizid" id = "<%=id%>"  value="<%=id%>">
                 <div class = "form-group">
-                    <input type="text" class = "form-control"  name="answer" id = "answer" placeholder = "Escribe Respuesta" value="<%=answer%>">
+                    <input type="text" class = "form-control"  name="answer" id = "answer" placeholder = "Escribe Respuesta" value="<%=answer%>" autofocus>
                 </div>
                 <span id = "resMsg"></span>
                 <button type= 'button' class = 'btn btn-outline-success btn-block btn-bg' name = "check" > Verifica </button>

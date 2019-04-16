@@ -15,6 +15,10 @@ router.get('/quiz/play/:id', quiz.playController);
 router.post('/create/quiz', quiz.createController);
 router.post('/update/quiz', quiz.updateController);
 router.post('/delete/quiz', quiz.deleteController);
+
+// post check answer
+
+router.post('/quiz/check', quiz.checkController);
 // 404 error
 router.get('*', (req, res)=>{
     res.send("404 Recurso no encontrado");

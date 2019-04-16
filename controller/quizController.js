@@ -71,11 +71,25 @@ exports.playController = (req, res) => {
         res.render('play', {
             title: "QuizMVC",
             author: "Emmanuelluur",
-            
+
             id: response.id,
             question: response.question,
-            answer: response.answer
+            answer: ''
         });
+    }).catch(() =>
+        res.send("No existe en BD")
+    );
+}
+
+exports.checkController = (req, res) => {
+    let clientanswer = req.fields.answer;
+    quizz.findOne({
+        where: { id: req.fields.quizid }
+    }).then(response => {
+        let answerdb =  response.answer;
+        (clientanswer == answerdb) ? 
+        res.send({msg: `La respuesta ${clientanswer} es Correcta`, class: 'alert alert-success'}) : 
+        res.send({msg: `La respuesta ${clientanswer} es Incorrecta`, class: 'alert alert-danger'});
     }).catch(() =>
         res.send("No existe en BD")
     );

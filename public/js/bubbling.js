@@ -21,7 +21,15 @@ eventos.addEventListener('click', (element) => {
     }
     // Verifica Resupuesta
     if (element.target.getAttribute("name") == 'check') {
-        alert("Verifica Respuesta")
+        let frm = document.getElementById('check');
+        let data = new FormData(frm);
+        post('/quiz/check', data)
+        .then(d => {
+            let response = JSON.parse(d);
+            document.getElementById("resMsg").innerHTML = `<div class = '${response.class}'> ${response.msg}</div>`
+        })
+        .catch(err => console.log(err))
+
     }
     //  Carga vista para editar pregunta
     if (element.target.getAttribute("name") == 'edit') {

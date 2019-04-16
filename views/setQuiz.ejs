@@ -3,7 +3,7 @@
     <div class="col-sm-4">
         <h1><%= message%></h1>
         <div id = "myApp" method = "post">
-            <form id = 'saveQuiz' name = "saveQuiz" action = "/save/quiz" method = "post">
+            <form id = 'saveQuiz' name = "saveQuiz">
                 <input type="hidden"  name="quizid" id = "<%=id%>"  value="<%=id%>">
                 <div class = "form-group">
                     <input type="text" class = "form-control" name="question" id = "question" value="<%=question%>" placeholder = "Escribe Pregunta" autofocus>
