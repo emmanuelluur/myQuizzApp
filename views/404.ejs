@@ -1,0 +1,15 @@
+<%- include('./templates/header'); -%>
+<div class="container-fluid">
+    <div class="col">
+        <h1><%= question%></h1>
+        <div id = "myApp" method = "post">
+            <img src="https://vignette.wikia.nocookie.net/fategrandorder/images/1/1d/Error404.png/revision/latest?cb=20170204102207" class="mx-auto d-block">
+            <hr>
+            <p><button type= 'button' class = 'btn btn-outline-secondary btn-block btn-bg' name = "back"> Regresar </button></p>
+        </div>
+    </div>
+</div>
+<%- include('./templates/scripts'); -%>
+<script src = "../../public/js/bubbling.js"> </script>
+<script src = "../../public/js/methods.js"> </script>
+<%- include('./templates/end'); -%>

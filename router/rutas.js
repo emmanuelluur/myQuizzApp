@@ -20,7 +20,14 @@ router.post('/delete/quiz', quiz.deleteController);
 
 router.post('/quiz/check', quiz.checkController);
 // 404 error
-router.get('*', (req, res)=>{
-    res.send("404 Recurso no encontrado");
+router.get('*', (req, res) => {
+    res.render('404', {
+        title: "QuizMVC",
+        author: "Emmanuelluur",
+
+        id:"",
+        question: "",
+        answer: ''
+    });
 });
 module.exports = router;
