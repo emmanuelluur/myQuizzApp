@@ -15,7 +15,7 @@ eventos.addEventListener('click', (element) => {
         location.href = "/";
     }
     if (element.target.getAttribute("name") == 'play') {
-        alert('Play' + element.target.getAttribute("quizid"))
+        location.href = `/quiz/play/${element.target.getAttribute("quizid")}`;
     }
     if (element.target.getAttribute("name") == 'edit') {
         location.href = `/quiz/edit/${element.target.getAttribute("quizid")}`;

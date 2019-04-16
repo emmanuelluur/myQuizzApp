@@ -6,6 +6,7 @@ const quiz = require('../controller/quizController');
 router.get('/', index.getIndex)
 router.get('/quiz/new', quiz.setQuestion);
 router.get('/quiz/edit/:id', quiz.editQuestion);
+router.get('/quiz/play/:id', quiz.playController);
 // post
 
 router.post('/create/quiz', quiz.createController);
