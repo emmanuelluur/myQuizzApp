@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/emmanuelluur/myQuizzApp/issues"
   },
-  "homepage": "https://github.com/emmanuelluur/myQuizzApp#readme"
+  "homepage": "https://github.com/emmanuelluur/myQuizzApp#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
