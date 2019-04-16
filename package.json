@@ -1,0 +1,23 @@
+{
+  "name": "myquizapp",
+  "version": "1.0.0",
+  "description": "Quizz js ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmanuelluur/myQuizzApp.git"
+  },
+  "keywords": [
+    "js",
+    "mvc"
+  ],
+  "author": "@emmanuelluur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emmanuelluur/myQuizzApp/issues"
+  },
+  "homepage": "https://github.com/emmanuelluur/myQuizzApp#readme"
+}
