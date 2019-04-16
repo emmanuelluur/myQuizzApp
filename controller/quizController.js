@@ -19,16 +19,16 @@ exports.editQuestion = (req, res) => {
             answer: response.answer
         });
     })
-    .then(()=> console.log(`Response Code for Edit ${res.statusCode}`))
-    .catch(() =>
-        res.send("No existe en BD")
-    );
+        .then(() => console.log(`Response Code for Edit ${res.statusCode}`))
+        .catch(() =>
+            res.send("No existe en BD")
+        );
 }
 exports.createController = (req, res) => {
     let newQuiz = quizz.build(req.fields);
     newQuiz.save()
         .then(() => res.send('Guardado Correctamente!'))
-        .then(()=> console.log(`Response Code ${res.statusCode}`))
+        .then(() => console.log(`Response Code ${res.statusCode}`))
         .catch((err) => { console.log(err); })
 }
 
@@ -42,7 +42,7 @@ exports.updateController = (req, res) => {
             where: { id: idQuiz }
         })
         .then(() => res.send('Actualizado Correctamente!'))
-        .then(()=> console.log(`Response Code ${res.statusCode}`))
+        .then(() => console.log(`Response Code ${res.statusCode}`))
         .catch((err) => { console.log(err); })
 }
 
@@ -57,16 +57,19 @@ exports.deleteController = (req, res) => {
     });
 }
 exports.setQuestion = (req, res) => {
-    res.render('setQuiz', {
-        title: "QuizMVC",
-        author: "Emmanuelluur",
-        message: "Nueva Pregunta",
-        event: "create",
-        id: null,
-        question: "",
-        answer: ""
+    new Promise((resolve, reject)=>{
+        res.render('setQuiz', {
+            title: "QuizMVC",
+            author: "Emmanuelluur",
+            message: "Nueva Pregunta",
+            event: "create",
+            id: null,
+            question: "",
+            answer: ""
+        })
+        resolve();
     })
-    .then(()=> console.log(`Response Code  ${res.statusCode}`));
+    .then(() => console.log(`Response Code  ${res.statusCode}`));
 }
 
 exports.playController = (req, res) => {
@@ -82,10 +85,10 @@ exports.playController = (req, res) => {
             answer: ''
         });
     })
-    .then(()=> console.log(`Response Code  ${res.statusCode}`))
-    .catch(() =>
-        res.send("No existe en BD")
-    );
+        .then(() => console.log(`Response Code  ${res.statusCode}`))
+        .catch(() =>
+            res.send("No existe en BD")
+        );
 }
 
 exports.checkController = (req, res) => {
@@ -93,13 +96,13 @@ exports.checkController = (req, res) => {
     quizz.findOne({
         where: { id: req.fields.quizid }
     }).then(response => {
-        let answerdb =  response.answer;
-        (clientanswer == answerdb) ? 
-        res.send({msg: `La respuesta ${clientanswer} es Correcta`, class: 'alert alert-success'}) : 
-        res.send({msg: `La respuesta ${clientanswer} es Incorrecta`, class: 'alert alert-danger'});
+        let answerdb = response.answer;
+        (clientanswer == answerdb) ?
+            res.send({ msg: `La respuesta ${clientanswer} es Correcta`, class: 'alert alert-success' }) :
+            res.send({ msg: `La respuesta ${clientanswer} es Incorrecta`, class: 'alert alert-danger' });
     })
-    .then(()=> console.log(`Response Code ${res.statusCode}`))
-    .catch(() =>
-        res.send("No existe en BD")
-    );
+        .then(() => console.log(`Response Code ${res.statusCode}`))
+        .catch(() =>
+            res.send("No existe en BD")
+        );
 }
