@@ -18,7 +18,9 @@ exports.editQuestion = (req, res) => {
             question: response.question,
             answer: response.answer
         });
-    }).catch(() =>
+    })
+    .then(()=> console.log(`Response Code for Edit ${res.statusCode}`))
+    .catch(() =>
         res.send("No existe en BD")
     );
 }
@@ -26,6 +28,7 @@ exports.createController = (req, res) => {
     let newQuiz = quizz.build(req.fields);
     newQuiz.save()
         .then(() => res.send('Guardado Correctamente!'))
+        .then(()=> console.log(`Response Code ${res.statusCode}`))
         .catch((err) => { console.log(err); })
 }
 
@@ -39,6 +42,7 @@ exports.updateController = (req, res) => {
             where: { id: idQuiz }
         })
         .then(() => res.send('Actualizado Correctamente!'))
+        .then(()=> console.log(`Response Code ${res.statusCode}`))
         .catch((err) => { console.log(err); })
 }
 
@@ -61,7 +65,8 @@ exports.setQuestion = (req, res) => {
         id: null,
         question: "",
         answer: ""
-    });
+    })
+    .then(()=> console.log(`Response Code  ${res.statusCode}`));
 }
 
 exports.playController = (req, res) => {
@@ -76,7 +81,9 @@ exports.playController = (req, res) => {
             question: response.question,
             answer: ''
         });
-    }).catch(() =>
+    })
+    .then(()=> console.log(`Response Code  ${res.statusCode}`))
+    .catch(() =>
         res.send("No existe en BD")
     );
 }
@@ -90,7 +97,9 @@ exports.checkController = (req, res) => {
         (clientanswer == answerdb) ? 
         res.send({msg: `La respuesta ${clientanswer} es Correcta`, class: 'alert alert-success'}) : 
         res.send({msg: `La respuesta ${clientanswer} es Incorrecta`, class: 'alert alert-danger'});
-    }).catch(() =>
+    })
+    .then(()=> console.log(`Response Code ${res.statusCode}`))
+    .catch(() =>
         res.send("No existe en BD")
     );
 }

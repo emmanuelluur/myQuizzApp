@@ -10,6 +10,7 @@ exports.getIndex= (req, res) => {
 
     quizz.findAll()
     .then((quizzes) => res.render("index", {title: "QuizMVC", message: "MVC: Quizzes", author: "Emmanuelluur", quiz: quizzes}) )
+    .then(()=> console.log(`Response Code for Index ${res.statusCode}`))
     .catch((error) => `DB Error:\n${error}`);
     
 }

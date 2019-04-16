@@ -6,4 +6,6 @@
 - ORM Sequelize
 - express-formidable para manejo de objetos FormData()
 
-### Hecho con ❤ por: Emmanuel Lucio Urbina
+- User npm start for run server (runs on 8000 port)
+
+### Hecho con ❤ por: [Emmanuel Lucio Urbina](https://twitter.com/emmanuelluur)
