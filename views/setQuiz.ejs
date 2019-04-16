@@ -3,13 +3,14 @@
     <div class="col-sm-4">
         <h1><%= message%></h1>
         <div id = "myApp" method = "post">
-            <form id = 'frm'>
+            <form id = 'saveQuiz' name = "saveQuiz" action = "/save/quiz" method = "post">
                 <div class = "form-group">
                     <input type="text" class = "form-control" name="question" id = "question" value="<%=question%>" placeholder = "Escribe Pregunta" autofocus>
                 </div>
                 <div class = "form-group">
                     <input type="text" class = "form-control"  name="answer" id = "answer" placeholder = "Escribe Respuesta" value="<%=answer%>">
                 </div>
+                <span id = "resMsg"></span>
                 <button type= 'button' class = 'btn btn-outline-success btn-block btn-bg' name = "<%=event%>" > Guardar </button>
             </form>
             <hr>

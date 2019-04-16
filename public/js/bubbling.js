@@ -31,12 +31,10 @@ eventos.addEventListener('click', (element)=>{
         alert('Saved Edited Question');
     }
     if(element.target.getAttribute("name")=='create') {
-        let data = new FormData(document.getElementById("frm"));
-        data.append("item3", "item3");
+        let data = new FormData(document.getElementById("saveQuiz"));
         post("/save/quiz", data)
             .then(d => {
-
-               alert(d);
+                document.getElementById("resMsg").innerHTML = `<div class = 'alert alert-success'> ${d}</div>`
             })
             .catch(err => console.log(err))
     

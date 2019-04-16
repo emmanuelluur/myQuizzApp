@@ -20,7 +20,10 @@ exports.editQuestion = (req, res) => {
     );
 }
 exports.createController = (req, res) => {
-    res.send(JSON.stringify(req.fields))
+    let newQuiz = quizz.build(req.fields);
+    newQuiz.save()
+    .then(() => res.send('Guardado Correctamente!'))
+    .catch(() =>{})
 }
 
 
