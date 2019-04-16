@@ -1,9 +1,18 @@
-let express = require('express');
-let path = require('path');
-let bodyParser = require('body-parser');
-let rutas = require('./router/rutas.js');
-let db = require('./model/quizModel');
-let app = express();
+const express = require('express');
+const path = require('path');
+
+const rutas = require('./router/rutas.js');
+const db = require('./model/quizModel');
+const formidableMiddleware = require('express-formidable');
+const app = express();
+
+// uso de formData
+app.use(formidableMiddleware({
+    encoding: 'utf-8',
+    uploadDir: './public', // file to upload
+    multiples: true, // req.files to be arrays of files
+
+}));
 
 // uso de templates y acceso a su carpeta views
 app.set('views', path.join(__dirname, 'views'));
@@ -13,8 +22,8 @@ app.set('view engine', 'ejs')
  * uso de envio de cuerpo
  * uso de carpeta public para archivos locales
  */
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+
 app.use('/public', express.static(__dirname + '/public'));
 
 // uso de router

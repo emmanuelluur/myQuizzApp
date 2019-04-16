@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/emmanuelluur/myQuizzApp#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-formidable": "^1.2.0",
     "sequelize": "^5.5.1",
     "sqlite3": "^4.0.6"
   }

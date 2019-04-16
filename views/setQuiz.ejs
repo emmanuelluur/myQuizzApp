@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="col-sm-4">
         <h1><%= message%></h1>
-        <div id = "myApp">
+        <div id = "myApp" method = "post">
             <form id = 'frm'>
                 <div class = "form-group">
                     <input type="text" class = "form-control" name="question" id = "question" value="<%=question%>" placeholder = "Escribe Pregunta" autofocus>
@@ -19,4 +19,5 @@
 </div>
 <%- include('./templates/scripts'); -%>
 <script src = "../../public/js/bubbling.js"> </script>
+<script src = "../../public/js/methods.js"> </script>
 <%- include('./templates/end'); -%>
