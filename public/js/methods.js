@@ -1,5 +1,11 @@
-function post(url, data) {
-
+/**
+ * Written by Emmanuel Lucio Urbina
+ */
+const post = (url, data) => {
+    /**
+     * URL como /recurso/accion
+     * data debe ser un objeto FormData
+     */
     return new Promise((resolve, reject) => {
         let request = new XMLHttpRequest();
         request.open('POST', url, true);

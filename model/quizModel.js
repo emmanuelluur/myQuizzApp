@@ -1,3 +1,6 @@
+/**
+ * Written by Emmanuel Lucio Urbina
+ */
 const Sequelize = require('sequelize');
 const Operators = Sequelize.Op; // Operators like or, like, see more in documents
 const Model = Sequelize.Model; // ORM MODELS

@@ -1,3 +1,6 @@
+/**
+ * Written by Emmanuel Lucio Urbina
+ */
 const model = require('../model/quizModel');
 const Op = model.Operators;
 const quizz = model.Quiz;
