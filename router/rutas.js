@@ -8,7 +8,9 @@ router.get('/quiz/new', quiz.setQuestion);
 router.get('/quiz/edit/:id', quiz.editQuestion);
 // post
 
-router.post('/save/quiz', quiz.createController);
+router.post('/create/quiz', quiz.createController);
+router.post('/update/quiz', quiz.updateController);
+router.post('/delete/quiz', quiz.deleteController);
 // 404 error
 router.get('*', (req, res)=>{
     res.send("404 Recurso no encontrado");

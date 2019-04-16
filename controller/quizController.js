@@ -22,11 +22,33 @@ exports.editQuestion = (req, res) => {
 exports.createController = (req, res) => {
     let newQuiz = quizz.build(req.fields);
     newQuiz.save()
-    .then(() => res.send('Guardado Correctamente!'))
-    .catch(() =>{})
+        .then(() => res.send('Guardado Correctamente!'))
+        .catch((err) => { console.log(err); })
 }
 
+exports.updateController = (req, res) => {
+    let idQuiz = req.fields.quizid
 
+    quizz.update({
+        question: req.fields.question,
+        answer: req.fields.answer
+    }, {
+            where: { id: idQuiz }
+        })
+        .then(() => res.send('Actualizado Correctamente!'))
+        .catch((err) => { console.log(err); })
+}
+
+exports.deleteController = (req, res) => {
+    //  console.log(req.fields) muestra en linea de comandos los campos
+    quizz.destroy({
+        where: {
+            id: req.fields.quizid
+        }
+    }).then(() => {
+        res.send();
+    });
+}
 exports.setQuestion = (req, res) => {
     res.render('setQuiz', {
         title: "QuizMVC",

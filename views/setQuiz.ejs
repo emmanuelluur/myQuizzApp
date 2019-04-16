@@ -4,6 +4,7 @@
         <h1><%= message%></h1>
         <div id = "myApp" method = "post">
             <form id = 'saveQuiz' name = "saveQuiz" action = "/save/quiz" method = "post">
+                <input type="hidden"  name="quizid" id = "<%=id%>"  value="<%=id%>">
                 <div class = "form-group">
                     <input type="text" class = "form-control" name="question" id = "question" value="<%=question%>" placeholder = "Escribe Pregunta" autofocus>
                 </div>
@@ -11,7 +12,7 @@
                     <input type="text" class = "form-control"  name="answer" id = "answer" placeholder = "Escribe Respuesta" value="<%=answer%>">
                 </div>
                 <span id = "resMsg"></span>
-                <button type= 'button' class = 'btn btn-outline-success btn-block btn-bg' name = "<%=event%>" > Guardar </button>
+                <button type= 'button' class = 'btn btn-outline-success btn-block btn-bg' id = "<%=id%>" name = "<%=event%>" > Guardar </button>
             </form>
             <hr>
             <p><button type= 'button' class = 'btn btn-outline-secondary btn-block btn-bg' name = "back"> Regresar </button></p>

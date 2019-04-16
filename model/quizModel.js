@@ -31,7 +31,7 @@ Quiz.init({
 
 //	sync table, se recomiendan las migraciones para proyectos grandes
 
-sequelize.sync({force:true}) // use force para truncar la tabla
+sequelize.sync({force:true}) // use {force:true} para truncar la tabla
 .then(() => Quiz.count())
 .then(count => {
 	if(!count){

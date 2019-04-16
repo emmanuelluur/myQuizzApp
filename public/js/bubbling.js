@@ -10,34 +10,57 @@
 
 const eventos = document.getElementById("myApp");
 
-eventos.addEventListener('click', (element)=>{
-    if(element.target.getAttribute("name")=='back') {
+eventos.addEventListener('click', (element) => {
+    if (element.target.getAttribute("name") == 'back') {
         location.href = "/";
     }
-    if(element.target.getAttribute("name")=='play') {
+    if (element.target.getAttribute("name") == 'play') {
         alert('Play' + element.target.getAttribute("quizid"))
     }
-    if(element.target.getAttribute("name")=='edit') {
+    if (element.target.getAttribute("name") == 'edit') {
         location.href = `/quiz/edit/${element.target.getAttribute("quizid")}`;
-        
+
     }
-    if(element.target.getAttribute("name")=='delete') {
-        alert('Delete' + element.target.getAttribute("quizid"))
+    if (element.target.getAttribute("name") == 'delete') {
+        let data = new FormData();
+        data.append("quizid", element.target.getAttribute("quizid"))
+        let c = confirm("Desea quitar pregunta?");
+        const p = new Promise((resolve, reject) => {
+            c ? resolve(true) : reject(false);
+        });
+
+        p
+            .then(() => {
+                // devuelve eliminar pregunta hacerla con post
+                post("/delete/quiz", data)
+                    .then(() => {
+                        location.href = "/";
+                    })
+                    .catch(err => console.log(err))
+            })
+            .then(() => {
+               
+            }).catch((d) => { });
     }
-    if(element.target.getAttribute("name")=='new') {
+    if (element.target.getAttribute("name") == 'new') {
         location.href = "/quiz/new";
     }
-    if(element.target.getAttribute("name")=='update') {
-        alert('Saved Edited Question');
-    }
-    if(element.target.getAttribute("name")=='create') {
+    if (element.target.getAttribute("name") == 'update') {
         let data = new FormData(document.getElementById("saveQuiz"));
-        post("/save/quiz", data)
+        post("/update/quiz", data)
             .then(d => {
                 document.getElementById("resMsg").innerHTML = `<div class = 'alert alert-success'> ${d}</div>`
             })
             .catch(err => console.log(err))
-    
+    }
+    if (element.target.getAttribute("name") == 'create') {
+        let data = new FormData(document.getElementById("saveQuiz"));
+        post("/create/quiz", data)
+            .then(d => {
+                document.getElementById("resMsg").innerHTML = `<div class = 'alert alert-success'> ${d}</div>`
+            })
+            .catch(err => console.log(err))
+
     }
 });
 
