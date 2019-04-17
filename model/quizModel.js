@@ -7,7 +7,7 @@ const Model = Sequelize.Model; // ORM MODELS
 
 const sequelize = new Sequelize({  // CONFIG DB
 	dialect: 'sqlite',
-	storage: './db/quizzez.sqlite',
+	storage: './db/quizzes.sqlite',
 	logging: false
 });
 
@@ -27,7 +27,7 @@ Quiz.init({
 	}
 },{
 	sequelize,
-	modelName: 'Quiz'
+	modelName: 'pregunta'
   // options
 });
 
